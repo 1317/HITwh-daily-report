@@ -108,10 +108,10 @@ def getWxfwdttoken(jid, code):
     postUrl = "http://xy.4009955.com/wxfwdt-api/layout_01_01/login/loginYdBycode"
     responseRes = requests.post(postUrl, json=data, headers=header)
     # print(responseRes.content.decode().split('"'))
-    x = "wxtoken:" + responseRes.content.decode().split('"')[21]
+    x = "wxtoken:" + responseRes.content.decode().split('"')[25]
     print('wxtoken')
     PROCESS.append(x)
-    return responseRes.content.decode().split('"')[21]
+    return responseRes.content.decode().split('"')[25]
 
 
 def getCode2(jid, wxtoken):
@@ -139,10 +139,10 @@ def getJktbtoken(jid, wxtoken, code):
     postUrl = "http://xy.4009955.com/jktb-api/jktb_01_01/login/loginYdBycode"
     responseRes = requests.post(postUrl, json=data, headers=header)
     # print(responseRes.content.decode().split('"'))
-    x = "jktoken:" + responseRes.content.decode().split('"')[21]
+    x = "jktoken:" + responseRes.content.decode().split('"')[25]
     print('jktoken')
     PROCESS.append(x)
-    return responseRes.content.decode().split('"')[21]
+    return responseRes.content.decode().split('"')[25]
 
 
 def getTodayForms(jid, wxtoken, jktoken):
